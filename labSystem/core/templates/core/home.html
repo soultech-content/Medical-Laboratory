@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - Lab System</title>
+</head>
+<body>
+    <h1>أهلا بك في Lab System</h1>
+    <a href="{% url 'book-appointment' %}">حجز موعد جديد</a>
+    <h2>المواعيد الحالية:</h2>
+    <ul>
+        {% for appointment in appointments %}
+            <li>
+                {{ appointment.patient.name }} - {{ appointment.status }} - {{ appointment.date }}
+            </li>
+        {% empty %}
+            <li>لا توجد مواعيد حالياً</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

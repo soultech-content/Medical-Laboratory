@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>حجز موعد</title>
+</head>
+<body>
+    <h1>حجز موعد جديد</h1>
+<form method="post">
+  {% csrf_token %}
+  <label>الاسم:</label>
+  <input type="text" name="name" placeholder="الاسم" required>
+
+  <label>رقم الهاتف:</label>
+  <input type="text" name="phone" placeholder="رقم الهاتف" required>
+
+  <label>نوع الفحص:</label>
+  <input type="text" name="test_type" placeholder="نوع الفحص">
+
+  <label>تاريخ ووقت الموعد:</label>
+  <input type="datetime-local" name="date_time" placeholder="YYYY-MM-DDTHH:MM">
+
+  <label>المكان:</label>
+  <select name="location">
+    <option value="lab">المختبر</option>
+    <option value="home">سحب منزلي</option>
+  </select>
+
+  <label>العنوان (لخدمة المنزل):</label>
+  <input type="text" name="address" placeholder="العنوان">
+
+  <button type="submit">حجز الموعد</button>
+</form>
+</body>
+</html>

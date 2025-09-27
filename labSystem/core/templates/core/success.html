@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نجاح</title>
+</head>
+<body>
+    <h2>{{ message }}</h2>
+    <p><strong>المريض:</strong> {{ appointment.patient.name }}</p>
+    <p><strong>نوع الفحص:</strong> {{ appointment.test_type }}</p>
+    <p><strong>الموعد:</strong> {{ appointment.date_time }}</p>
+    <p><strong>المكان:</strong> {{ appointment.get_location_display }}</p>
+
+    <br>
+    <a href="{% url 'home' %}">
+        <button>🏠 الرجوع إلى الصفحة الرئيسية</button>
+    </a>
+</body>
+</html>
